@@ -9,7 +9,31 @@
     
 - [o]  **2. 전체 코드에서 가장 핵심적이거나 가장 복잡하고 이해하기 어려운 부분에 작성된 
 주석 또는 doc string을 보고 해당 코드가 잘 이해되었나요?**
-    - 네
+    - 네. 
+            # 무한 반복 게임 시작
+            while True:
+                game_count += 1
+                print(f"--- {game_count}번째 시도 ---")
+
+                # 2단계: 사용자 입력 받기
+                user_input = input("5자리 숫자를 입력하세요 (예: 12345): ")
+
+                # 입력값을 숫자 리스트로 변환
+                user_guess = []
+                for digit in user_input:
+                    user_guess.append(int(digit))
+
+                print(f"입력한 숫자: {user_guess}")
+
+                # 3단계: Strike와 Ball 계산
+                strike = 0
+                ball = 0
+
+                for i in range(5):
+                    if answer[i] == user_guess[i]:
+                        strike += 1
+                    elif user_guess[i] in answer:
+                        ball += 1
         
 - [o]  **3. 에러가 난 부분을 디버깅하여 문제를 해결한 기록을 남겼거나
 새로운 시도 또는 추가 실험을 수행해봤나요?**
